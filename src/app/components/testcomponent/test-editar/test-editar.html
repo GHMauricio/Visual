@@ -1,0 +1,55 @@
+<div class="container">
+    <div style="text-align: center; margin: 3%"><h2>Editar Test</h2></div>
+    <div style="text-align: center">
+      <form [formGroup]="form" (submit)="aceptar()">
+        <mat-form-field class="example-full-width">
+          <mat-label>ID Usuario</mat-label>
+          <input matInput type="number" formControlName="idUsuario" />
+          <mat-error>
+            @if (form.get('idUsuario')?.hasError('required')) {
+              Ingrese el id del usuario
+            }
+          </mat-error>
+        </mat-form-field>
+        <br />
+  
+        <mat-form-field>
+          <mat-label>Fecha del Test</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="fecha" />
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <br />
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Estado Emocional</mat-label>
+          <input matInput placeholder="Tranquilo" formControlName="estado" />
+        </mat-form-field>
+        <br />
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Notas</mat-label>
+          <textarea matInput formControlName="notas"></textarea>
+        </mat-form-field>
+        <br />
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Puntaje (0 - 20)</mat-label>
+          <input matInput type="number" formControlName="puntaje" />
+          <mat-error>
+            @if (form.get('puntaje')?.hasError('required')) {
+              Ingrese el puntaje
+            }
+            @if (form.get('puntaje')?.hasError('min') || form.get('puntaje')?.hasError('max')) {
+              El puntaje debe estar entre 0 y 20
+            }
+          </mat-error>
+        </mat-form-field>
+  
+        <div>
+          <button matButton="elevated">Actualizar</button>
+        </div>
+      </form>
+    </div>
+  </div>

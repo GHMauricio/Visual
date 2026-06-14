@@ -1,0 +1,31 @@
+<div class="container">
+    <mat-toolbar class="custom-toolbar">
+        <button matButton class="btn-rojo" [matMenuTriggerFor]="menuTest">
+            <mat-icon fontIcon="quiz"></mat-icon>
+            Test
+        </button>
+
+        <button matButton class="btn-rojo" [matMenuTriggerFor]="menuDetalleTest">
+            <mat-icon fontIcon="list_alt"></mat-icon>
+            Detalle Test
+        </button>
+    </mat-toolbar>
+
+    <mat-menu #menuTest="matMenu">
+        <button mat-menu-item routerLink="/tests/nuevo">
+            <mat-icon>add</mat-icon> Registrar
+        </button>
+        <button mat-menu-item routerLink="/tests/listar">
+            <mat-icon>list</mat-icon> Listar
+        </button>
+    </mat-menu>
+
+    <mat-menu #menuDetalleTest="matMenu">
+        <button mat-menu-item routerLink="/detalletests/nuevo">
+            <mat-icon>add</mat-icon> Registrar
+        </button>
+        <button mat-menu-item routerLink="/detalletests/listar">
+            <mat-icon>list</mat-icon> Listar
+        </button>
+    </mat-menu>
+</div>
