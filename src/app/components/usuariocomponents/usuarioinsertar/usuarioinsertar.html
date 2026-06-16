@@ -1,0 +1,77 @@
+<div class="container">
+  <div style="text-align: center; margin: 3%"><h2>Registro de Usuario</h2></div>
+  <div style="text-align: center">
+    <form [formGroup]="form" (submit)="aceptar()">
+      <mat-form-field class="example-full-width">
+        <mat-label>Nombre de Usuario</mat-label>
+        <input matInput placeholder="Mario" formControlName="nombre" />
+        <mat-error>
+          @if (form.get('nombre')?.hasError('required')) {
+            Ingrese nombre de autor!!
+          }          
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field class="example-full-width">
+        <mat-label>Correo</mat-label>
+        <input matInput placeholder="Romero39109@gmail.com" formControlName="correo" />
+      </mat-form-field>
+      <br />
+      <mat-form-field class="example-full-width">
+        <mat-label>Contrasena</mat-label>
+        <input matInput  type="password" formControlName="contrasenia" />
+      </mat-form-field>
+      <br />
+      <mat-form-field class="example-full-width">
+        <mat-label>Rol</mat-label>
+        <input matInput placeholder="" formControlName="Rol" />
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Fecha de Registro</mat-label>
+        <input matInput [matDatepicker]="pickerRegistro" formControlName="registro" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="pickerRegistro"></mat-datepicker-toggle>
+        <mat-datepicker #pickerRegistro></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Fecha de Nacimiento</mat-label>
+        <input matInput [matDatepicker]="pickerNaciU" formControlName="NaciU" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="pickerNaciU"></mat-datepicker-toggle>
+        <mat-datepicker #pickerNaciU></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Fecha de Nacimiento de Adolescente</mat-label>
+        <input matInput [matDatepicker]="pickerNaciA" formControlName="NaciA" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="pickerNaciA"></mat-datepicker-toggle>
+        <mat-datepicker #pickerNaciA></mat-datepicker>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Genero de Adolescente</mat-label>
+        <mat-select formControlName="genero">
+          @for (food of generos; track food) {
+            <mat-option [value]="food.value">{{ food.viewValue }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Intereses</mat-label>
+        <textarea matInput formControlName="intereses"></textarea>
+      </mat-form-field>
+      <br />
+      <mat-form-field class="example-full-width">
+        <mat-label>Cantidad</mat-label>
+        <input matInput placeholder="" formControlName="cantidad" />
+      </mat-form-field>
+      <br />
+      <div>
+        <button matButton="elevated">Registrar</button>
+      </div>
+    </form>
+  </div>
+</div>
+

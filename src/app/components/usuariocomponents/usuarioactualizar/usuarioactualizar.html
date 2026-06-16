@@ -1,0 +1,65 @@
+<div class="container">
+  <div style="text-align: center; margin: 3%"><h2>Actualizar Datos de usuario</h2></div>
+  <div style="text-align: center">
+    <form [formGroup]="form" (submit)="aceptar()">
+      <mat-form-field class="example-full-width">
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="codigo" readonly="true" />
+      </mat-form-field>
+      <br />
+      <mat-form-field class="example-full-width">
+        <mat-label>Nombre de Usuario</mat-label>
+        <input matInput placeholder="" formControlName="nombre" />
+        <mat-error>
+          @if (form.get('nombre')?.hasError('required')) {
+            Ingrese nombre de autor!!
+          }
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field class="example-full-width">
+        <mat-label>Correo</mat-label>
+        <input matInput placeholder="Vargas Llosa" formControlName="correo" />
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Fecha de Nacimiento</mat-label>
+        <input matInput [matDatepicker]="pickerNaciU" formControlName="NaciU" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="pickerNaciU"></mat-datepicker-toggle>
+        <mat-datepicker #pickerNaciU></mat-datepicker>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Fecha de Nacimiento de Adolescente</mat-label>
+        <input matInput [matDatepicker]="pickerNaciA" formControlName="NaciA" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="pickerNaciA"></mat-datepicker-toggle>
+        <mat-datepicker #pickerNaciA></mat-datepicker>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Genero</mat-label>
+        <mat-select formControlName="nivel">
+          @for (food of generos; track food) {
+            <mat-option [value]="food.value">{{ food.viewValue }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Intereses</mat-label>
+        <textarea matInput formControlName="intereses"></textarea>
+      </mat-form-field>
+      <br />
+      <mat-form-field class="example-full-width">
+        <mat-label>Cantidad</mat-label>
+        <input matInput placeholder="" formControlName="cantidad" />
+      </mat-form-field>
+      <br />
+      <div>
+        <button matButton="elevated">Actualizar</button>
+      </div>
+    </form>
+  </div>
+</div>
