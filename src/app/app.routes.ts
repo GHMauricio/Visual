@@ -4,10 +4,10 @@ import { Testcomponent } from './components/testcomponent/testcomponent';
 import { TestListar } from './components/testcomponent/test-listar/test-listar';
 import { TestInsertar } from './components/testcomponent/test-insertar/test-insertar';
 import { TestEditar } from './components/testcomponent/test-editar/test-editar';
-import { Detalletestcomponent } from './components/detalletestcomponent/detalletestcomponent';
-import { DetalleTestListar } from './components/detalletestcomponent/detalletest-listar/detalletest-listar';
-import { DetalleTestInsertar } from './components/detalletestcomponent/detalletest-insertar/detalletest-insertar';
-import { DetalleTestEditar } from './components/detalletestcomponent/detalletest-editar/detalletest-editar';
+import { Eventocomponent } from './components/eventocomponent/eventocomponent';
+import { EventoListar } from './components/eventocomponent/evento-listar/evento-listar';
+import { EventoInsertar } from './components/eventocomponent/evento-insertar/evento-insertar';
+import { EventoEditar } from './components/eventocomponent/evento-editar/evento-editar';
 
 export const routes: Routes = [
     {
@@ -29,12 +29,12 @@ export const routes: Routes = [
         ]
     },
     {
-        path: 'detallestest',
-        component: Detalletestcomponent,
+        path: 'eventos',
+        component: Eventocomponent,
         children: [
-          { path: 'listar', component: DetalleTestListar },
-          { path: 'nuevo', component: DetalleTestInsertar },
-          { path: 'editar/:id', component: DetalleTestEditar }
+            { path: 'listar', component: EventoListar },
+            { path: 'nuevo', component: EventoInsertar },
+            { path: 'editar/:id', component: EventoEditar }
         ]
-      },
+    }
 ];
