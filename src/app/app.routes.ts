@@ -11,6 +11,11 @@ import { EventoEditar } from './components/eventocomponent/evento-editar/evento-
 import { Usuariolistar } from './components/usuariocomponents/usuariolistar/usuariolistar';
 import { Usuarioinsertar } from './components/usuariocomponents/usuarioinsertar/usuarioinsertar';
 import { Usuarioactualizar } from './components/usuariocomponents/usuarioactualizar/usuarioactualizar';
+import { Detalletestcomponent } from './components/detalletestcomponent/detalletestcomponent';
+import { DetalleTestListar } from './components/detalletestcomponent/detalletest-listar/detalletest-listar';
+import { DetalleTestInsertar } from './components/detalletestcomponent/detalletest-insertar/detalletest-insertar';
+import { DetalleTestEditar } from './components/detalletestcomponent/detalletest-editar/detalletest-editar';
+
 
 
 export const routes: Routes = [
