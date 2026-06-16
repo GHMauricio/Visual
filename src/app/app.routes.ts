@@ -8,6 +8,10 @@ import { Eventocomponent } from './components/eventocomponent/eventocomponent';
 import { EventoListar } from './components/eventocomponent/evento-listar/evento-listar';
 import { EventoInsertar } from './components/eventocomponent/evento-insertar/evento-insertar';
 import { EventoEditar } from './components/eventocomponent/evento-editar/evento-editar';
+import { Usuariolistar } from './components/usuariocomponents/usuariolistar/usuariolistar';
+import { Usuarioinsertar } from './components/usuariocomponents/usuarioinsertar/usuarioinsertar';
+import { Usuarioactualizar } from './components/usuariocomponents/usuarioactualizar/usuarioactualizar';
+
 
 export const routes: Routes = [
     {
@@ -18,6 +22,15 @@ export const routes: Routes = [
     {
         path: 'homes',
         component: Homecomponent
+    },
+  {
+        path: 'usuarios',
+        component: Testcomponent,
+        children: [
+            { path: 'listar', component: Usuariolistar },
+            { path: 'registrar', component: Usuarioinsertar },
+            { path: 'editar/:id', component: Usuarioactualizar }
+        ]
     },
     {
         path: 'tests',
