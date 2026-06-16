@@ -37,4 +37,13 @@ export const routes: Routes = [
             { path: 'editar/:id', component: EventoEditar }
         ]
     }
+  {
+        path: 'detallestest',
+        component: Detalletestcomponent,
+        children: [
+          { path: 'listar', component: DetalleTestListar },
+          { path: 'nuevo', component: DetalleTestInsertar },
+          { path: 'editar/:id', component: DetalleTestEditar }
+        ]
+      },
 ];
