@@ -9,6 +9,12 @@
             <mat-icon fontIcon="list_alt"></mat-icon>
             Detalle Test
         </button>
+
+        <button matButton class="btn-rojo" [matMenuTriggerFor]="menuEvento">
+            <mat-icon fontIcon="list_alt"></mat-icon>
+            Evento
+        </button>
+        
     </mat-toolbar>
 
     <mat-menu #menuTest="matMenu">
@@ -25,6 +31,15 @@
             <mat-icon>add</mat-icon> Registrar
         </button>
         <button mat-menu-item routerLink="/detalletests/listar">
+            <mat-icon>list</mat-icon> Listar
+        </button>
+    </mat-menu>
+
+    <mat-menu #menuEvento="matMenu">
+        <button mat-menu-item routerLink="/eventos/nuevo">
+            <mat-icon>add</mat-icon> Registrar
+        </button>
+        <button mat-menu-item routerLink="/eventos/listar">
             <mat-icon>list</mat-icon> Listar
         </button>
     </mat-menu>

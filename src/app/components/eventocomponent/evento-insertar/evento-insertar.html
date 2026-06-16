@@ -1,0 +1,50 @@
+<div class="container">
+  <div style="text-align: center; margin: 3%"><h2>Registro de Eventos</h2></div>
+  <div style="text-align: center">
+    <form [formGroup]="form" (submit)="aceptar()">
+      <mat-form-field class="example-full-width">
+        <mat-label>Titulo de Evento</mat-label>
+        <input matInput placeholder="Evento" formControlName="titulo" />
+        <mat-error>
+          @if (form.get('titulo')?.hasError('required')) {
+            Ingrese titulo de evento!!
+          }          
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field class="example-full-width">
+        <mat-label>Descripcion</mat-label>
+        <input matInput placeholder="Descripcion" formControlName="descripcion" />
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Fecha de Inicio</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="fechaInicio" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Fecha de Fin</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="fechaFin" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Tipo de evento</mat-label>
+        <mat-select formControlName="nivel">
+          @for (food of niveles; track food) {
+            <mat-option [value]="food.value">{{ food.viewValue }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <br />    
+      <div>
+        <button matButton="elevated">Registrar</button>
+      </div>
+    </form>
+  </div>
+</div>

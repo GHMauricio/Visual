@@ -4,6 +4,10 @@ import { Testcomponent } from './components/testcomponent/testcomponent';
 import { TestListar } from './components/testcomponent/test-listar/test-listar';
 import { TestInsertar } from './components/testcomponent/test-insertar/test-insertar';
 import { TestEditar } from './components/testcomponent/test-editar/test-editar';
+import { Eventocomponent } from './components/eventocomponent/eventocomponent';
+import { EventoListar } from './components/eventocomponent/evento-listar/evento-listar';
+import { EventoInsertar } from './components/eventocomponent/evento-insertar/evento-insertar';
+import { EventoEditar } from './components/eventocomponent/evento-editar/evento-editar';
 
 export const routes: Routes = [
     {
@@ -24,4 +28,13 @@ export const routes: Routes = [
             { path: 'editar/:id', component: TestEditar }
         ]
     },
+    {
+        path: 'eventos',
+        component: Eventocomponent,
+        children: [
+            { path: 'listar', component: EventoListar },
+            { path: 'nuevo', component: EventoInsertar },
+            { path: 'editar/:id', component: EventoEditar }
+        ]
+    }
 ];
