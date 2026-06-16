@@ -32,7 +32,7 @@ export class TestEditar implements OnInit {
       fecha: ['', Validators.required],
       estado: ['', Validators.required],
       notas: [''],
-      puntaje: ['', [Validators.required, Validators.min(0), Validators.max(20)]],
+      puntaje: ['', Validators.required],
     });
 
     const id = Number(this.route.snapshot.paramMap.get('id'));

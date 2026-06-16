@@ -8,7 +8,7 @@ import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-test-listar',
-  imports: [MatTableModule, MatIconModule, MatButtonModule, RouterLink],
+  imports: [MatTableModule, MatIconModule, MatButtonModule],
   templateUrl: './test-listar.html',
   styleUrl: './test-listar.css',
 })
