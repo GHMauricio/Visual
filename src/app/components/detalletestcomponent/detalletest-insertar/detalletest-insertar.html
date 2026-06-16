@@ -1,0 +1,50 @@
+<div class="container">
+    <div style="text-align: center; margin: 3%"><h2>Registro de Detalle de Test</h2></div>
+    <div style="text-align: center">
+      <form [formGroup]="form" (submit)="aceptar()">
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>ID Test</mat-label>
+          <input matInput type="number" formControlName="idTest" />
+          <mat-error>
+            @if (form.get('idTest')?.hasError('required')) {
+              El ID del test es obligatorio
+            }
+          </mat-error>
+        </mat-form-field>
+        <br />
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Pregunta</mat-label>
+          <input matInput formControlName="pregunta" />
+          <mat-error>
+            @if (form.get('pregunta')?.hasError('required')) {
+              La pregunta es obligatoria
+            }
+          </mat-error>
+        </mat-form-field>
+        <br />
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Respuesta</mat-label>
+          <input matInput formControlName="respuesta" />
+          <mat-error>
+            @if (form.get('respuesta')?.hasError('required')) {
+              La respuesta es obligatoria
+            }
+          </mat-error>
+        </mat-form-field>
+        <br />
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Observación</mat-label>
+          <textarea matInput formControlName="observacion"></textarea>
+        </mat-form-field>
+        <br />
+  
+        <div>
+          <button matButton="elevated">Registrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
