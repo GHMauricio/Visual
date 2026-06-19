@@ -15,6 +15,11 @@ import { Detalletestcomponent } from './components/detalletestcomponent/detallet
 import { DetalleTestListar } from './components/detalletestcomponent/detalletest-listar/detalletest-listar';
 import { DetalleTestInsertar } from './components/detalletestcomponent/detalletest-insertar/detalletest-insertar';
 import { DetalleTestEditar } from './components/detalletestcomponent/detalletest-editar/detalletest-editar';
+import { Entrevistacomponent } from './components/entrevistacomponent/entrevistacomponent';
+import { Entrevistalistar } from './components/entrevistacomponent/entrevistalistar/entrevistalistar';
+import { Entrevistainsertar } from './components/entrevistacomponent/entrevistainsertar/entrevistainsertar';
+import { Entrevistaactualizar } from './components/entrevistacomponent/entrevistaactualizar/entrevistaactualizar';
+import { Usuariocomponents } from './components/usuariocomponents/usuariocomponents';
 
 
 
