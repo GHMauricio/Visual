@@ -4,7 +4,7 @@ import { Usuariolistar } from './usuariolistar/usuariolistar';
 
 @Component({
   selector: 'app-usuariocomponents',
-  imports: [RouterOutlet,Usuariolistar],
+  imports: [Usuariolistar, RouterOutlet],
   templateUrl: './usuariocomponents.html',
   styleUrl: './usuariocomponents.css',
 })

@@ -1,0 +1,45 @@
+<div class="container">
+  <div style="text-align: center; margin: 3%"><h2>Actualizar Datos de usuario</h2></div>
+  <div style="text-align: center">
+    <form [formGroup]="form" (submit)="aceptar()">
+      <mat-form-field class="example-full-width">
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="codigo" readonly="true" />
+      </mat-form-field>
+      <br />
+      <mat-form-field class="example-full-width">
+        <mat-label>ID de Recomendación</mat-label>
+        <input matInput placeholder="Mario" formControlName="recomendacion" />
+        <mat-error>
+          @if (form.get('recomendacion')?.hasError('required')) {
+            Ingrese una recomendación asociada!!
+          }          
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Fecha de Registro</mat-label>
+        <input matInput [matDatepicker]="pickerRegistro" formControlName="fecha" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="pickerRegistro"></mat-datepicker-toggle>
+        <mat-datepicker #pickerRegistro></mat-datepicker>
+      </mat-form-field>
+      <br />
+      <mat-form-field class="example-full-width">
+        <mat-label>Tema Tratado</mat-label>
+        <input matInput placeholder="" formControlName="tema" />
+      </mat-form-field>
+      <br/>
+      <mat-form-field>
+        <mat-label>Comentarios</mat-label>
+        <textarea matInput formControlName="comentarios"></textarea>
+      </mat-form-field>
+      <br />
+      
+      <br />
+      <div>
+        <button matButton="elevated">Actualizar</button>
+      </div>
+    </form>
+   </div>
+</div>
+

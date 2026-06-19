@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { provideNativeDateAdapter } from '@angular/material/core';
-import { Usuario } from '../../../models/Usuario';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Serviceusuario } from '../../../service/serviceusuario';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
+import { Serviceusuario } from '../../../services/serviceusuario';
+import { UsuarioInsertar } from '../../../models/UsuarioInsertar';
 
 @Component({
   selector: 'app-usuarioactualizar',
@@ -18,7 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class Usuarioactualizar implements OnInit {
   form: FormGroup = new FormGroup({});
-  user: Usuario = new Usuario();
+  user: UsuarioInsertar = new UsuarioInsertar();
   id:number=0
   generos: { value: string; viewValue: string }[] = [
     { value: 'Masculino', viewValue: 'Masculino' },

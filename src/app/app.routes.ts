@@ -27,16 +27,7 @@ export const routes: Routes = [
     {
         path: 'homes',
         component: Homecomponent
-    },
-    {
-        path: 'usuarios',
-        component: Testcomponent,
-        children: [
-            { path: 'listar', component: Usuariolistar },
-            { path: 'registrar', component: Usuarioinsertar },
-            { path: 'editar/:id', component: Usuarioactualizar }
-        ]
-    },
+    },  
     {
         path: 'tests',
         component: Testcomponent,
@@ -63,8 +54,23 @@ export const routes: Routes = [
             { path: 'nuevo', component: DetalleTestInsertar },
             { path: 'editar/:id', component: DetalleTestEditar }
         ]
+      },
+  { 
+        path: 'usuarios',
+        component: Usuariocomponents,
+        children: [
+            { path: 'listar', component: Usuariolistar },
+            { path: 'registrar', component: Usuarioinsertar },
+            { path: 'editar/:id', component: Usuarioactualizar }
+        ]
     },
-
-    //Ejmplo
-
+  { 
+        path: 'entrevistas',
+        component: Entrevistacomponent,
+        children: [
+            { path: 'listar', component: Entrevistalistar },
+            { path: 'registrar', component: Entrevistainsertar },
+            { path: 'editar/:id', component: Entrevistaactualizar }
+        ]
+    },
 ];
