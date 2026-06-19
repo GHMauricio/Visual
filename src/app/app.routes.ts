@@ -64,7 +64,13 @@ export const routes: Routes = [
             { path: 'editar/:id', component: DetalleTestEditar }
         ]
     },
-
+    {
+        path: 'recomendaciones',
+        component: Recomendacionescomponent,
+        children:{
+            {path: 'listar', component:}
+        }
+    }
     //Ejmplo
 
 ];
