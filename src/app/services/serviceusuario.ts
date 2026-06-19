@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../../environment/environment.development';
 import { HttpClient } from '@angular/common/http';
 import { Usuario } from '../models/Usuario';
+import { environment } from '../../environments/environment.development';
+import { UsuarioInsertar } from '../models/UsuarioInsertar';
 
 const base_url = environment.base;
 @Injectable({
@@ -15,19 +16,18 @@ export class Serviceusuario {
   list() {
     return this.http.get<Usuario[]>(`${this.url}/listar`);
   }
-
-  insert(u: Usuario) {
+ 
+  insert(u: UsuarioInsertar) {
     return this.http.post(`${this.url}/Registrar`,u,);
   }
-eliminar(id:number){
+  eliminar(id:number){
   return this.http.delete(`${this.url}/${id}`, { responseType: 'text' })
-}
-update(u:Usuario){
+  }
+  update(u:UsuarioInsertar){
   return this.http.put(`${this.url}`, u,{ responseType: 'text' })
-}
-
-listId(id: number) {
-    return this.http.get<Usuario>(`${this.url}/${id}`)
   }
 
+  listId(id: number) {
+    return this.http.get<Usuario>(`${this.url}/${id}`)
+  }
 }
