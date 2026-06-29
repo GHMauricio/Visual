@@ -21,6 +21,15 @@ export class Entrevistaactualizar implements OnInit {
   aut: Entrevista = new Entrevista();
   id:number=0
 
+temas: { value: string; viewValue: string }[] = [
+    { value: 'DEPORTES', viewValue: 'DEPORTES' },
+    { value: 'AMIGOS', viewValue: 'AMIGOS' },
+    { value: 'REDES', viewValue: 'REDES' },
+    { value: 'SEXO', viewValue: 'SEXO' },
+    { value: 'ESCUELA', viewValue: 'ESCUELA' },
+  ];
+
+
   constructor(
     private eS: entrevistaservice,
     private router: Router,
@@ -35,6 +44,7 @@ export class Entrevistaactualizar implements OnInit {
     })
 
     this.form = this.formBuilder.group({
+      codigo:[''],
       recomendacion: ['', Validators.required],
       fecha: ['', Validators.required],
       tema: ['', Validators.required],
@@ -43,11 +53,12 @@ export class Entrevistaactualizar implements OnInit {
   }
   aceptar() {
     if (this.form.valid) {
+      (this.aut.idEntrevista=this.form.value.codigo),
       ((this.aut.idRecomendacion = this.form.value.recomendacion),
         (this.aut.fechaEntrevista = this.form.value.fecha));
       this.aut.temaEntrevista = this.form.value.tema;
       this.aut.comentarioEntrevista=this.form.value.comentarios;
-      this.eS.insert(this.aut).subscribe({
+      this.eS.update(this.aut).subscribe({
         next: () => {
           this.router.navigate(['/entrevistas/listar']);
         },
