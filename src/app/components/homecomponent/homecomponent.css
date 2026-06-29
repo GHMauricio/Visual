@@ -1,0 +1,86 @@
+/* Contenedor Principal con un espaciado equilibrado */
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  color: #2b2d42;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Encabezado Principal */
+.welcome-hero {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.welcome-hero h1 {
+  color: #1e3d59; /* Azul confianza */
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.welcome-hero .subtitle {
+  color: #5c677d;
+  font-size: 1.2rem;
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Layout de Tarjetas en bloques organizados */
+.features-layout {
+  display: block;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+/* Tarjetas individuales amigables */
+.feature-card {
+  display: inline-block;
+  vertical-align: top;
+  width: 30%;
+  min-width: 280px;
+  margin: 1.5%;
+  background: #ffffff;
+  padding: 2.5rem 1.5rem;
+  border-radius: 16px; /* Bordes redondeados más cálidos */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  border-top: 5px solid #17b978; /* Línea verde superior */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  color: #1e3d59;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.feature-card p {
+  color: #6c757d;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Sección de Cierre o Frase del pie de página */
+.home-footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: #eef1f6;
+  border-radius: 12px;
+}
+
+.home-footer .quote {
+  font-style: italic;
+  color: #4a5568;
+  font-size: 1.1rem;
+  margin: 0;
+}
