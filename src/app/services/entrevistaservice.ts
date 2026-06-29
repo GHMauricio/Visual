@@ -26,10 +26,17 @@ export class entrevistaservice{
     }
 
     update(e:Entrevista){
-      return this.http.put(`${this.url}`, e,{ responseType: 'text' })
+      return this.http.put(`${this.url}/${e.idEntrevista}`, e,{ responseType: 'text' })
     }
 
     listId(id: number) {
         return this.http.get<Entrevista>(`${this.url}/${id}`)
+    }
+  listTema(tema:string){
+      return this.http.get<Entrevista[]>(`${this.url}/tema/${tema}`)
+    }
+
+    listbyRecomendacion(id:number){
+      return this.http.get<Entrevista[]>(`${this.url}/Recomendacion/${id}`)
     }
 }

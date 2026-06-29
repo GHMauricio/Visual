@@ -1,5 +1,9 @@
 <div class="container">
     <mat-toolbar class="custom-toolbar">
+      <button matButton class="btn-rojo" [matMenuTriggerFor]="menuUsuario">
+      <mat-icon fontIcon="quiz"></mat-icon>
+      Usuario
+    </button>
         <button matButton class="btn-rojo" [matMenuTriggerFor]="menuTest">
             <mat-icon fontIcon="quiz"></mat-icon>
             Test
@@ -9,7 +13,10 @@
             <mat-icon fontIcon="list_alt"></mat-icon>
             Detalle Test
         </button>
-
+<button matButton class="btn-rojo" [matMenuTriggerFor]="menuEntrevista">
+      <mat-icon fontIcon="quiz"></mat-icon>
+      Entrevista
+    </button>
         <button matButton class="btn-rojo" [matMenuTriggerFor]="menuEvento">
             <mat-icon fontIcon="list_alt"></mat-icon>
             Evento
@@ -17,6 +24,10 @@
         
     </mat-toolbar>
 
+  <mat-menu #menuUsuario="matMenu">
+    <button mat-menu-item routerLink="/usuarios/registrar"><mat-icon>add</mat-icon> Registrar</button>
+    <button mat-menu-item routerLink="/usuarios/listar"><mat-icon>list</mat-icon> Listar</button>
+  </mat-menu>
     <mat-menu #menuTest="matMenu">
         <button mat-menu-item routerLink="/tests/nuevo">
             <mat-icon>add</mat-icon> Registrar
@@ -34,6 +45,14 @@
             <mat-icon>list</mat-icon> Listar
         </button>
     </mat-menu>
+  <mat-menu #menuEntrevista="matMenu">
+    <button mat-menu-item routerLink="/entrevistas/registrar">
+      <mat-icon>add</mat-icon> Registrar
+    </button>
+    <button mat-menu-item routerLink="/entrevistas/listar"><mat-icon>list</mat-icon> Listar</button>
+    <button mat-menu-item routerLink="/entrevistas/tema"><mat-icon>search</mat-icon> Buscar Tema</button>
+    <button mat-menu-item routerLink="/entrevistas/recomendacion"><mat-icon>search</mat-icon> Buscar Por Recomendacion</button>
+  </mat-menu>
 
     <mat-menu #menuEvento="matMenu">
         <button mat-menu-item routerLink="/eventos/nuevo">

@@ -1,38 +1,100 @@
+.container-form {
+  max-width: 750px; /* Ancho ideal para que no se estire de borde a borde */
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(30, 61, 89, 0.08); /* Sombra elegante basada en el azul */
+}
+
+h2 {
+  color: #1e3d59; /* Identidad con la barra superior */
+  font-weight: 600;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+/* Línea decorativa sutil debajo del título */
+h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: #17b978; /* Toque verde */
+  margin: 8px auto 0 auto;
+  border-radius: 2px;
+}
+
+/* ==========================================
+   📌 FILAS EN PARALELO (RESPONSIVE)
+   ========================================== */
+.form-row {
+  display: flex;
+  gap: 20px; /* Espacio uniforme entre los campos hermano */
+  margin-bottom: 0.5rem;
+}
+
+/* Asegura que cada input tome el 50% en pantallas medianas/grandes */
 mat-form-field {
-
- width: 60%;
-
+  flex: 1;
+  width: 100%;
 }
 
-
-
-button[matButton='elevated'] {
-
- background-color:#fb0800;
-
- color: white;
-
- border: none;
-
- padding: 0.5rem 1.25rem;
-
- font-size: 1.1rem;
-
- border-radius: 0.375rem;
-
- cursor: pointer;
-
- transition: background-color 0.3s ease;
-
- width: 60%;
-
+/* Ajuste para pantallas pequeñas (celulares) */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
 }
 
-
-
-button[matButton='elevated']:hover {
-
- background-color: #faf67c;
-
+/* ==========================================
+   📌 HOVER Y COLOR FOCO EN CAMPOS ANGULAR MATERIAL
+   ========================================== */
+::v-deep .mat-mdc-form-field-focus-indicator {
+  color: #1e3d59 !important;
 }
 
+/* Modificadores sutiles para los iconos */
+mat-icon[matPrefix] {
+  color: #8a99ad;
+  margin-right: 8px;
+}
+
+/* ==========================================
+   📌 ACCIONES: BOTÓN DE REGISTRO
+   ========================================== */
+.form-actions {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn-registrar {
+  background-color: #1e3d59 !important; /* Azul corporativo */
+  color: #ffffff !important;
+  padding: 12px 32px !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  border-radius: 10px !important;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(30, 61, 89, 0.2) !important;
+  transition: all 0.25s ease !important;
+}
+
+.btn-registrar:hover {
+  background-color: #17b978 !important; /* Cambia al verde al pasar el cursor */
+  box-shadow: 0 6px 16px rgba(23, 185, 120, 0.3) !important;
+  transform: translateY(-2px);
+}
+
+.btn-registrar mat-icon {
+  font-size: 1.25rem;
+  width: 24px;
+  height: 24px;
+}

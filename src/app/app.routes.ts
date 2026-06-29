@@ -20,6 +20,8 @@ import { Entrevistalistar } from './components/entrevistacomponent/entrevistalis
 import { Entrevistainsertar } from './components/entrevistacomponent/entrevistainsertar/entrevistainsertar';
 import { Entrevistaactualizar } from './components/entrevistacomponent/entrevistaactualizar/entrevistaactualizar';
 import { Usuariocomponents } from './components/usuariocomponents/usuariocomponents';
+import { BuscarTema } from './components/entrevistacomponent/buscar-tema/buscar-tema';
+import { FiltroRecomendacion } from './components/entrevistacomponent/filtro-recomendacion/filtro-recomendacion';
 
 
 
@@ -76,6 +78,8 @@ export const routes: Routes = [
             { path: 'listar', component: Entrevistalistar },
             { path: 'registrar', component: Entrevistainsertar },
             { path: 'editar/:id', component: Entrevistaactualizar }
+            { path: 'tema', component: BuscarTema},
+            { path: 'recomendacion', component: FiltroRecomendacion}
         ]
     },
 ];

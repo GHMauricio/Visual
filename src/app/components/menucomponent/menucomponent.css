@@ -1,142 +1,81 @@
-/* --- Toolbar --- */
-
+/* --- Toolbar (Barra Superior) --- */
 .custom-toolbar {
-
- background-color: #fb0800; /* verde principal */
-
- display: flex;
-
- align-items: center;
-
- padding: 0 8px;
-
+  /* Un azul profundo y elegante que transmite estabilidad y seriedad institucional */
+  background-color: #1e3d59; 
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-
-
-/* --- Botón principal --- */
-
+/* --- Botones de Navegación --- */
 .btn-rojo {
-
- background-color: #fb0800;
-
- border: none;
-
- font-size: smaller;
-
- border-radius: 4px;
-
- margin: 4px;
-
- padding: 6px 10px;
-
- display: flex;
-
- align-items: center;
-
- gap: 6px;
-
- cursor: pointer;
-
- transition: background-color 0.2s ease;
-
+  background-color: transparent; /* Fondo limpio por defecto */
+  color: #ffffff !important;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 8px; /* Bordes un poco más suaves */
+  margin: 4px 6px;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
-
-
+/* Efecto Hover: Cambia a un verde cálido y suave al pasar el mouse */
 .btn-rojo:hover {
-
- background-color: rgb(106, 235, 157);
-
+  background-color: #17b978; 
+  color: #ffffff !important;
 }
 
-
-
-/* --- Icono --- */
-
+/* --- Icono dentro del botón --- */
 .btn-rojo mat-icon,
-
 .btn-rojo .material-symbols-outlined {
-
- font-size: 1.3rem;
-
- vertical-align: middle;
-
- line-height: 1;
-
+  font-size: 1.25rem;
+  vertical-align: middle;
+  line-height: 1;
 }
-
-
 
 /* --- Texto dentro del botón --- */
-
-.btn-rojo span:not(.material-symbols-outlined),
-
-.btn-rojo {
-
- vertical-align: middle;
-
+.btn-rojo span:not(.material-symbols-outlined) {
+  vertical-align: middle;
 }
 
-
-
-/* --- Asegurar color blanco --- */
-
+/* --- Asegurar color blanco por defecto en los elementos de la barra --- */
 .custom-toolbar button,
-
 .custom-toolbar mat-icon {
-
- color: rgb(255, 255, 255);
-
+  color: rgba(255, 255, 255, 0.95);
 }
 
-
-
-/* --- Menú desplegable translúcido verde claro --- */
-
+/* ==========================================================================
+   📌 MENÚ DESPLEGABLE TRANSLÚCIDO (MAT-MENU)
+   Alineado con tonos claros y profesionales, ideal para entornos de tutoría
+   ========================================================================== */
 .mat-mdc-menu-panel {
-
- background-color: rgba(
-
-  250,
-
-  121,
-
-  16,
-
-  0.479
-
- ) !important; /* verde claro translúcido (lightgreen con transparencia) */
-
- backdrop-filter: blur(6px); /* efecto suave de vidrio */
-
- border: 1px solid rgba(236, 143, 85, 0.3);
-
- border-radius: 8px;
-
- padding: 4px 0;
-
+  /* Fondo blanco translúcido con efecto vidrio (Glassmorphism) */
+  background-color: rgba(255, 255, 255, 0.85) !important; 
+  backdrop-filter: blur(8px); 
+  border: 1px solid rgba(30, 61, 89, 0.15);
+  border-radius: 12px;
+  padding: 6px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
 }
 
-
-
-/* --- Opciones del menú --- */
-
+/* --- Opciones individuales del menú desplegable --- */
 .mat-mdc-menu-item {
-
- color: #0c570c !important; /* texto verde oscuro */
-
- font-size: 0.85rem;
-
- font-weight: 500;
-
+  color: #1e3d59 !important; /* Texto en azul profundo para excelente legibilidad */
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 10px 16px !important;
+  transition: background-color 0.2s ease;
 }
 
-
-
+/* Hover de las opciones internas: un toque verde muy sutil */
 .mat-mdc-menu-item:hover {
-
- background-color: rgba(46, 158, 46, 0.2) !important; /* un verde más visible al pasar el mouse */
-
+  background-color: rgba(23, 185, 120, 0.12) !important; 
+  color: #139e66 !important; /* El texto resalta en verde oscuro al seleccionarlo */
 }
 
