@@ -1,1 +1,45 @@
-<p>recomendaciones-editar works!</p>
+<div class="container">
+  <h2>Editar Recomendación</h2>
+
+  <form [formGroup]="form" (ngSubmit)="guardar()">
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>ID Usuario</mat-label>
+      <input matInput type="number" formControlName="idUsuario" />
+      <mat-error *ngIf="form.get('idUsuario')?.hasError('required')">
+        El ID de usuario es obligatorio
+      </mat-error>
+      <mat-error *ngIf="form.get('idUsuario')?.hasError('min')">
+        El ID debe ser mayor a 0
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Fecha de Envío</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="FechaEnvio" />
+      <mat-datepicker-toggle matIconSuffix [for]="picker" />
+      <mat-datepicker #picker />
+      <mat-error *ngIf="form.get('FechaEnvio')?.hasError('required')">
+        La fecha es obligatoria
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Estado</mat-label>
+      <mat-select formControlName="EstadoRecomendacion">
+        <mat-option *ngFor="let estado of estadosDisponibles" [value]="estado">
+          {{ estado }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('EstadoRecomendacion')?.hasError('required')">
+        El estado es obligatorio
+      </mat-error>
+    </mat-form-field>
+
+    <div class="botones">
+      <button mat-raised-button color="primary" type="submit">Actualizar</button>
+      <button mat-raised-button color="warn" type="button" (click)="cancelar()">Cancelar</button>
+    </div>
+
+  </form>
+</div>
